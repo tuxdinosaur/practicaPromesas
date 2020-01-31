@@ -70,3 +70,9 @@ buildPromise(wallToBuild)
   .catch(error => {
     console.error("ERROR at built promise");
   });
+
+//async, significa que dentro va a ser usada await
+
+async function main() {
+  const wallBuilt = await buildPromise(wallToBuild);
+}
