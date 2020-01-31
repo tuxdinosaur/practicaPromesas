@@ -1,3 +1,5 @@
+// PROMIFICACION
+
 const koderToRegister = {
   isInterviewed: false,
   isEnroll: false,
