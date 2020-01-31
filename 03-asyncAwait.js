@@ -50,6 +50,7 @@ function paintPromise(wall) {
   });
 }
 
+/* 
 buildPromise(wallToBuild)
   .then(wallBuilt => {
     planishPromise(wallBuilt)
@@ -70,9 +71,23 @@ buildPromise(wallToBuild)
   .catch(error => {
     console.error("ERROR at built promise");
   });
+ */
 
 //async, significa que dentro va a ser usada await
+//nos ayuda a escribir como si fuera sincrono
 
 async function main() {
   const wallBuilt = await buildPromise(wallToBuild);
+  const wallPlanished = await planishPromise(wallBuilt);
+  const wallPainted = await paintPromise(wallPlanished);
+
+  console.log("DONE", wallPainted);
 }
+
+main()
+  .then(() => {
+    console.log("NICE");
+  })
+  .catch(error => {
+    console.error("THAT'S TOO BAD");
+  });
